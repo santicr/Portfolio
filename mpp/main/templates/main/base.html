@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Dorang landing page.">
+    <meta name="author" content="Devcrud">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'main/vendors/themify-icons/css/themify-icons.css' %}">
+
+    <!-- Bootstrap + Dorang main styles -->
+	<link rel="stylesheet" href="{% static 'main/css/dorang.css' %}">
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" class="dark-theme">
+    {% load static %}
+    <!-- page navbar -->
+    <nav class="page-navbar" data-spy="affix" data-offset-top="10">
+        <ul class="nav-navbar container">
+            <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Santiago Caicedo</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About me</a></li>
+        </ul>
+    </nav><!-- end of page navbar -->
+
+    <!-- page header -->
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            {% block header %}{% endblock %}
+        </div>
+    </header><!-- end of page header -->
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- core  -->
+    <script src="{% static 'main/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'main/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap affix -->
+    <script src="{% static 'main/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+    <!-- Dorang js -->
+    <script src="{% static 'main/js/dorang.js' %}"></script>
+
+</body>
+</html>

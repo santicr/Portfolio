@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block header %}
+    <h1 class="header-title">Portfolio</h1>
+    <p class="header-subtitle">All projects since 2018</p>
+    <h4>Watch below!</h4>
+{% endblock %}
+
+{% block content %}
+    {% if projects %}
+        {% for p in projects %}
+            <div class="row project">
+                <div class="col-lg-3 col-md-4 offset-lg-1">
+                    {% load static %}<img class="img-fluid" src="{{ p.img.url }}" alt="project img">
+                </div>
+                <div class="col-lg-7 col-md-8">
+                    <h4 class="text-left">Project: {{ p.name }}</h4>
+                    <h4 class="text-left">Description: {{ p.description }}</h4>
+                    <h4 class="text-left">All details: <a href="{{ p.url }}">Get detail</a></h4>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
